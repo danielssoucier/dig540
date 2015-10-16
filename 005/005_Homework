@@ -1,0 +1,93 @@
+SELECT *
+FROM  `artist`
+LIMIT 0 , 30
+
+2	Arlo Guthrie	New York	1/1/67	10/15/15
+4	Metallica	Los Angeles	1/1/81	10/15/15
+5	Neil Young	Winnipeg	1/1/60	1/1/15
+
+SELECT artist.name, disc.title
+FROM artist, disc
+WHERE artist.id = disc.artist_id
+LIMIT 0 , 30
+
+Arlo Guthrie       Alice's Restaurant
+Metallica          ...And Justice for All
+Neil Young         Living With War
+
+SELECT track.title, disc.title
+FROM track, disc
+WHERE disc.id = track.disc_id
+LIMIT 0 , 30
+
+Alice's Restaurant Massacree	Alice's Restaurant
+One	                          ...And Justice for All
+Living With War	              Living With War
+
+What historical subjects has Metallica recorded songs about?
+
+SELECT artist.name AS  'artist', disc.title AS  'albumn', track.title AS  'song', historical_subject.name AS  'event'
+FROM artist, disc, track, historical_subject
+WHERE artist.id = disc.artist_id
+AND disc.id = track.disc_id
+AND artist.name =  'metallica'
+LIMIT 0 , 30
+
+Metallica;"...And Justice for All";"One";"Vietnam War"
+Metallica;"...And Justice for All";"One";"Vietnam War Protest"
+Metallica;"...And Justice for All";"One";"World War One"
+Metallica;"...And Justice for All";"One";"Second Iraq War"
+THIS HOWEVER IS WRONG.  THE TRACK ONE IS ONLY ABOUT WWI.  CONFUSED BY THESE RESULTS.
+
+What songs has Arlo Guthrie written about the Vietnam War?
+
+SELECT artist.name AS  'artist', disc.title AS  'albumn', track.title AS  'song', historical_subject.name AS  'event'
+FROM artist, disc, track, historical_subject
+WHERE artist.id = disc.artist_id
+AND disc.id = track.disc_id
+AND artist.name =  'Arlo Guthrie'
+AND historical_subject.name =  'Vietnam War'
+LIMIT 0 , 30
+
+Arlo Guthrie;"Alice's Restaurant ";"Alice's Restaurant Massacree";"Vietnam War"
+
+What songs has Neil Young written?
+
+SELECT artist.name AS  'artist', disc.title AS  'albumn', track.title AS  'song'
+FROM artist, disc, track
+WHERE artist.id = disc.artist_id
+AND disc.id = track.disc_id
+AND artist.name =  'Neil Young'
+LIMIT 0 , 30
+
+Neil Young; "Living With War"; "Living With War"
+
+What songs have been written about Second Iraq War?
+
+SELECT artist.name AS  'artist', disc.title AS  'albumn', track.title AS  'song', historical_subject.name AS  'event'
+FROM artist, disc, track, historical_subject
+WHERE artist.id = disc.artist_id
+AND disc.id = track.disc_id
+AND historical_subject.name =  'Second Iraq War'
+LIMIT 0 , 30
+
+Arlo Guthrie;"Alice's Restaurant ";"Alice's Restaurant Massacree";"Second Iraq War"
+Metallica;"...And Justice for All";"One";"Second Iraq War"
+Neil Young;"Living With War";"Living With War";"Second Iraq War"
+
+AGAIN THIS IS WRONG.  THE ONLY SONG REGARDING IRAQ IS LIVING WITH WAR BY NEIL YOUNG.
+
+What songs have been written as protest songs?
+
+SELECT artist.name AS  'artist', disc.title AS  'albumn', track.title AS  'song', historical_subject.name AS  'event', historical_subject.type AS  'type'
+FROM artist, disc, track, historical_subject
+WHERE artist.id = disc.artist_id
+AND disc.id = track.disc_id
+AND historical_subject.type =  'War Protest'
+LIMIT 0 , 30
+
+Arlo Guthrie;"Alice's Restaurant ";"Alice's Restaurant Massacree";"Vietnam War Protest";"War Protest"
+Metallica;"...And Justice for All";"One";"Vietnam War Protest";"War Protest"
+Neil Young;"Living With War";"Living With War";"Vietnam War Protest";"War Protest"
+
+ONCE AGAIN THE ONLY PROTEST SONG SHOULD BE ALICE'S RESTAURANT.  PERHAPS YOU CAN HELP ME OUT WITH THIS ISSUE.
