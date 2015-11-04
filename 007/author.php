@@ -1,6 +1,6 @@
 <?php
-class Diaries{
-  private $author;
+class Diary{
+  private $archive;
   private $dates;
 
   public function setDiarist($diaristName){
