@@ -1,0 +1,56 @@
+Omeka Assignment 009
+
+Describe the collection to be placed in Omeka:
+
+The collection that I would like to see in Omeka deals directly with my doctoral dissertation
+as well as a journal article that I just received back from peer review from the 'Journal
+of Military History' with a revise and resumit.  This collection is the 30 diaries that are
+still in existence from Benedict Arnold's invasion of Quebec through the state of Maine in
+1775.  For future writing purposes, it would be significant to have this data organized in a
+searchable format that has meaningful metadata so that one does not have to keep looking the
+information up about the diaries.
+
+What parts of this collection can be represented by Omeka and its current plugins:
+
+Where Dublin Core is the metadata schema for Omeka several of the fields can be used to model
+my data in the software. The following is a list of metadata from the DC schema that would be of use:
+
+identifier (to ID the object)
+title
+description
+creator
+subject (In case a larger database was created featuring other diaries from other wars or expeditions)
+date (period of time covered by the resource)
+relation (linking diaries from the same expedition or diaries written by the same author in other fronts)
+format (the physical description of the resource)
+language (this is useful because some of my resources from other expeditions are in French and German)
+type (text would be the primary type of most resources but a more nuanced exhibition would contain maps)
+coverage (this would be the named period, or expedition, covered by the resource)
+
+Perusal through the plugins yields these additional modes of modeling my database for these resources:
+
+The COinS Plugin would be useful to put citation metadata into the items in my exhibition
+Exhibit builder provides an interesting way to showcase diaries from expeditions
+
+What parts of this collection cannot be represented by Omeka and its current plugins:
+
+With the aim of use for this collection to be organizing diaries for later and current research
+several metadata fields are needed which are not included in the base program of Omeka.  These
+are the data from my collection that need customization to be included:
+
+Notes (The purpose of this field is special considerations about the journal such as transcribed
+        letters written by the author are contained within the text)
+
+Publishing History (a preponderance of the diaries have been published several times)
+
+Archive (Where the original manuscript is held)
+
+Hometown (Where the author hailed from)
+
+Rank (Military Rank of the individual at the time of authorship)
+
+Dates Served (length of military service)
+
+Occupation (What the occupation of the author was at the time)
+
+Image (A picture of the resource)
